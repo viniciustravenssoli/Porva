@@ -9,6 +9,17 @@ builder.Services.AddDbContext<AppDataContext>(
     options => options.UseSqlite("Data Source=Vinicius_Travenssoli.db")
 );
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder
+            .AllowAnyOrigin() // Aceitar requisições de qualquer origem
+            .AllowAnyMethod() // Aceitar todos os métodos HTTP (GET, POST, PUT, DELETE, etc.)
+            .AllowAnyHeader(); // Aceitar todos os cabeçalhos HTTP
+    });
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -22,6 +33,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(); 
 
 app.UseHttpsRedirection();
 

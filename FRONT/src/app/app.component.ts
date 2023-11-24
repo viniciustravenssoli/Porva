@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { ListarConcluidasComponent } from './listar-concluidas/listar-concluidas.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  template: `
-    <h1>Welcome to {{title}}!</h1>
+  template: 
+  `
+  <nav>
+  <a routerLink="pages/tarefas/listar">Listar Tarefas</a>
+  <a routerLink="pages/tarefas/cadastrar">Cadastrar Tarefas</a>
+  <a routerLink="pages/tarefas/listarconcluidas">Listar Tarefas Concluidas</a>
+  <a routerLink="pages/tarefas/listarnaoconcluidas">Listar Tarefas Nao ListarConcluidasComponent</a>
 
+  </nav>
     <router-outlet></router-outlet>
   `,
-  styles: [],
+  styles: []
 })
 export class AppComponent {
-  title = 'FRONT';
+  title = 'Front';
 }

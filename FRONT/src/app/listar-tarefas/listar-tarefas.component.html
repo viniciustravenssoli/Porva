@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Descriçao</th>
+        <th>Categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarefa of tarefas">
+        <td>{{ tarefa.tarefaId }}</td>
+        <td>{{ tarefa.titule}}</td>
+        <td>{{ tarefa.descricao }}</td>
+        <td>{{ tarefa.categoria?.nome }}</td>
+        <th>Ações</th>
+        <td>
+          <a href="pages/departament/update/{{ tarefa.tarefaId }}" class="edit">
+            <i> Editar </i>
+          </a>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
