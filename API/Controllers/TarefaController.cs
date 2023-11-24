@@ -54,16 +54,16 @@ public class TarefaController : ControllerBase
     }
 
     [HttpPut]
-    [Route("alterar")]
-    public IActionResult Alterar([FromBody] Tarefa tarefa)
+    [Route("alterar/{id}")]
+    public IActionResult Alterar([FromRoute] int id, [FromBody] Tarefa tarefa)
     {
         try
         {
-            var tarefaCadastrada = _context.Tarefas.FirstOrDefault(x => x.TarefaId == tarefa.TarefaId);
+            var tarefaCadastrada = _context.Tarefas.FirstOrDefault(x => x.TarefaId == id);
 
             if (tarefaCadastrada != null)
             {
-                if (tarefaCadastrada.Status == string.Empty)
+                if (tarefaCadastrada.Status == "Nao Iniciada")
                 {
                     tarefaCadastrada.Status = "Em andamento";
                 }
@@ -90,7 +90,7 @@ public class TarefaController : ControllerBase
     {
         try
         {
-            var tarefas = _context.Tarefas.Where(x => x.Status == "Em andamento");
+            var tarefas = _context.Tarefas.Where(x => x.Status != "Em andamento" );
             return Ok(tarefas);
         }
         catch (Exception e)

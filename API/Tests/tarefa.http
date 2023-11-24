@@ -10,24 +10,17 @@ Content-Type: application/json
 {
   "Titulo": "Compras no Supermercado",
   "Descricao": "1. Fazer lista de compras: pão, leite, ovos, frutas, vegetais",
-  "CategoriaId": 4
+  "CategoriaId": 2
 }
 
 ### Alterar Tarefa ###
-PUT {{base_url}}/alterar/5
+PUT {{base_url}}/alterar/16
+Content-Type: application/json
+
 {
-    "tarefaId": 5,
-    "titulo": "string",
-    "descricao": "string",
-    "criadoEm": "2023-11-24T12:19:04.102",
-    "categoria": {
-      "categoriaId": 1,
-      "nome": "Trabalho",
-      "criadoEm": "2023-11-25T08:53:46.6329519"
-    },
-    "categoriaId": 1,
-    "status": ""
-  }
+    "Status": "",
+    "CategoiraId": 2
+}
 
 ### Listar Tarefa concluidas ###
 

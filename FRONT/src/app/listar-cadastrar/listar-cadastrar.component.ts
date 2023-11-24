@@ -38,7 +38,7 @@ export class ListarCadastrarComponent implements OnInit {
       tarefaId: 0,
       descricao: this.descricao,
       titule: this.titulo,
-      status: "Em andamento"
+      status: "Nao Iniciada"
       
     }
 
