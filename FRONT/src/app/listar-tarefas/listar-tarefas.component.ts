@@ -11,6 +11,7 @@ export class ListarTarefasComponent implements OnInit {
 
 
   tarefas !: Tarefa[];
+  tarefa !: Tarefa;
 
   constructor(private client: HttpClient) { }
 
@@ -22,6 +23,19 @@ export class ListarTarefasComponent implements OnInit {
       next: (tarefas) => {
         console.log(tarefas);
         this.tarefas = tarefas;
+      },
+      error: (erro) => {
+        console.log(erro);
+      }
+    });
+}
+
+delete(id: number): void {
+  
+  this.client.put<Tarefa>(`https://localhost:7015/api/tarefa/alterar/${id}`, this.tarefa)
+    .subscribe({
+      next: (employee) => {
+        this.ngOnInit()
       },
       error: (erro) => {
         console.log(erro);

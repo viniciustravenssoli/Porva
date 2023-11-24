@@ -16,7 +16,7 @@ import { ListarNaoconcluidasComponent } from './listar-naoconcluidas/listar-naoc
     ListarTarefasComponent,
     ListarCadastrarComponent,
     ListarConcluidasComponent,
-    ListarNaoconcluidasComponent
+    ListarNaoconcluidasComponent,
   ],
   imports: [
     BrowserModule,

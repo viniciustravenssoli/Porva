@@ -90,7 +90,7 @@ public class TarefaController : ControllerBase
     {
         try
         {
-            var tarefas = _context.Tarefas.Where(x => x.Status != "Em andamento" );
+            var tarefas = _context.Tarefas.Where(x => x.Status != "Concluida" );
             return Ok(tarefas);
         }
         catch (Exception e)

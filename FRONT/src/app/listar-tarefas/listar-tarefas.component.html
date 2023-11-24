@@ -15,9 +15,9 @@
         <td>{{ tarefa.categoria?.nome }}</td>
         <th>Ações</th>
         <td>
-          <a href="pages/tarefa/update/{{ tarefa.tarefaId }}" class="edit">
-            <i> Editar </i>
-          </a>
+            <button class="edit" (click)="delete(tarefa.tarefaId)">
+                <i> Alterar Status </i>
+              </button>
 
         </td>
       </tr>
